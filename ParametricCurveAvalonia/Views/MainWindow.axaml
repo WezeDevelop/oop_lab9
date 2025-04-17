@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="ParametricCurveAvalonia.MainWindow"
+        Title="Графік параметричної кривої">
+        
+    <DockPanel>
+        <!-- Панель керування -->
+        <StackPanel DockPanel.Dock="Right" Width="200" Margin="15" Spacing="10">
+            <TextBlock Text="Параметри кривої" FontSize="16" FontWeight="Bold"/>
+            
+            <StackPanel Spacing="5">
+                <TextBlock Text="Радіус R:"/>
+                <TextBox x:Name="RValue" Text="1.0"/>
+            </StackPanel>
+            
+            <StackPanel Spacing="5">
+                <TextBlock Text="Радіус r:"/>
+                <TextBox x:Name="rValue" Text="0.5"/>
+            </StackPanel>
+            
+            <StackPanel Spacing="5">
+                <TextBlock Text="Мінімальне t:"/>
+                <TextBox x:Name="tMinValue" Text="0"/>
+            </StackPanel>
+            
+            <StackPanel Spacing="5">
+                <TextBlock Text="Максимальне t:"/>
+                <TextBox x:Name="tMaxValue" Text="6.283"/>
+            </StackPanel>
+            
+            <Button Content="Побудувати графік" Click="OnPlotButtonClick" Margin="0,20,0,0"/>
+        </StackPanel>
+        
+        <!-- Область для малювання графіку -->
+        <Canvas x:Name="PlotCanvas" Background="White" Margin="10"/>
+    </DockPanel>
+</Window>
